@@ -21,7 +21,7 @@ SAVE_LOCK = threading.Lock()
 
 DEFAULT_STATE: Dict[str, Any] = {
     "version": SAVE_VERSION,
-    "cat_name": "奶糖",
+    "cat_name": "张予涵",
     "hunger": 82,
     "mood": 76,
     "clean": 72,
