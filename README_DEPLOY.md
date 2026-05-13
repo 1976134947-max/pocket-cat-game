@@ -1,33 +1,25 @@
-# 喵喵治愈屋：公网部署版
+# 喵喵治愈屋 · 高贵白猫优化版
 
-这个版本适合部署到 Render、Railway、Fly.io、PythonAnywhere 等 Python Web 平台。
+这是适合 Render 部署的 Flask 网页小游戏版本。
 
-## 本地运行
+## 本版优化
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
+- 手机端主界面尽量控制在一屏内，主要状态直接显示在顶部。
+- 状态、商店、日记、设置改为手机底部多窗口入口，不需要一直上下滑动。
+- 喂食、摸摸、玩耍、洗澡、睡觉、拍照都有独立动画反馈。
+- 小猫从猫头升级为完整的高贵白猫形象，包含身体、尾巴、爪子、皇冠和饰品。
+- 保留等级、成就、日记、商店、导入导出存档和 PWA 添加到桌面功能。
 
-## Render 部署
+## Render 设置
 
-1. 把本文件夹上传到 GitHub 仓库。
-2. 登录 Render，New → Web Service。
-3. 选择这个 GitHub 仓库。
-4. Build Command 填：
+Build Command:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Start Command 填：
+Start Command:
 
 ```bash
 gunicorn app:app --bind 0.0.0.0:$PORT
 ```
-
-部署完成后，Render 会给你一个公网网址，手机直接用浏览器打开即可。
-
-## 注意
-
-免费云平台可能会休眠，第一次打开会慢一点。未配置持久化磁盘时，云服务重启后 cat_save.json 可能丢失。
